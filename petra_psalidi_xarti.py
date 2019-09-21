@@ -13,33 +13,16 @@ def show_result(choise, computer_choise):
         print('Ισσοπαλία')
         return
 
-    if choise == 0: # Πετρα
-        if computer_choise == 2:
-            print('Χάσατε!')
-            score['Computer'] += 1
-        if computer_choise == 1:
-            print('Κερδίσατε!')
-            score['Player'] += 1
+    if choise - computer_choise in [-1, 2]: # Dimitris Android sugestion
+        print('Κερδίσατε!')
+        score['Player'] += 1
         return
+        
+    print('Χάσατε!')
+    score['Computer'] += 1
+    return
 
-    if choise == 1: # Ψαλίδι
-        if computer_choise == 0:
-            print('Χάσατε!')
-            score['Computer'] += 1
-        if computer_choise == 2:
-            print('Κερδίσατε!')
-            score['Player'] += 1
-        return
-
-    if choise == 2: # Χαρτι
-        if computer_choise == 1:
-            print('Χάσατε!')
-            score['Computer'] += 1
-        if computer_choise == 0:
-            print('Κερδίσατε!')
-            score['Player'] += 1
-        return
-
+    
 def show_result_refactored_1(choise, computer_choise):
     if choise == computer_choise:
         print('Ισσοπαλία')
